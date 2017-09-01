@@ -16,14 +16,12 @@ bot.on('message', message => {
     if (message.content.startsWith(prefix + "help")) {
         message.member.send("helpo here\n:mmLol:")
     }
+
     const args = message.content.split(" ").slice(1);
 
     if (message.content.startsWith(prefix + "eval")) {
         if (message.author.id !== config.ownerID) {
-            return message.channel.send("no u")
-        }
-        if (message.content = "config.token") {
-            return message.channel.send("how bout no");
+            return message.channel.send("no u");
         }
         try {
             const code = args.join(" ");
@@ -36,7 +34,7 @@ bot.on('message', message => {
         } catch (err) {
             message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
         }
-    } 
+    }
 });
 
 function clean(text) {
