@@ -16,6 +16,7 @@ bot.on('message', message => {
     if (message.content.startsWith(prefix + "help")) {
         message.member.send("helpo here\n:mmLol:")
     }
+    const args = message.content.split(" ").slice(1);
 
     if (message.content.startsWith(prefix + "eval")) {
         if (message.author.id !== config.ownerID) {
