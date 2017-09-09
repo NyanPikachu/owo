@@ -3,6 +3,8 @@ const bot = new Discord.Client
 const config = require('./config.json')
 const prefix = "^";
 
+// worst thing is, i'm storing all the commands here
+
 bot.on('ready', () => {
     console.log("On.")
     bot.user.setStatus("dnd")
