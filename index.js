@@ -1,3 +1,10 @@
+/*
+*  @author apap04
+*  @description owo, a bot for (me) everyone
+*/
+
+
+
 const Discord = require('discord.js')
 const bot = new Discord.Client
 const config = require('./config.json')
@@ -34,6 +41,28 @@ bot.on('message', message => {
         } catch (err) {
             message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
         }
+    }
+
+    if (message.content.startsWith(prefix + 'ban')) {
+        let modRole = message.guild.roles.find("name", "ANIMU!");
+        if (!message.member.roles.has(modRole.id)) {
+            return message.reply("You can't ban.")
+        }
+        if (message.mentions.users.size === 0) {
+            return message.reply("I need a mention to ban.");
+        }
+        let banMember = message.guild.member(message.mentions.users.first());
+        if (!banMember) {
+            return ("That user does not seem to exist.");
+        }
+        if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) {
+            return message.reply("I can't ban this user.")
+        }
+        banMember.ban().then(member => {
+            message.reply(`$(member.user.username) was banned`)
+        }).catch(e => {
+            console.error(e)
+        })
     }
 });
 
