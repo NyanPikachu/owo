@@ -30,7 +30,7 @@ bot.on('message', message => {
 
     if (message.content.startsWith(prefix + "eval")) {
         if (message.author.id !== config.ownerID) {
-            return message.channel.send("no u");
+            return message.channel.send("nope");
         }
         try {
             const code = args.join(" ");
