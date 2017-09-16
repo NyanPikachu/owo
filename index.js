@@ -3,8 +3,6 @@
 *  @description owo, a bot for (me) everyone
 */
 
-
-
 const Discord = require('discord.js')
 const bot = new Discord.Client
 const config = require('./config.json')
@@ -23,7 +21,7 @@ bot.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
     
     if (message.content.startsWith(prefix + "help")) {
-        message.member.send("helpo here\n:mmLol:")
+        message.member.send("helpo here\n`^kick`")
     }
 
     const args = message.content.split(" ").slice(1);
