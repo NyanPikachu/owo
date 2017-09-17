@@ -12,9 +12,9 @@ const prefix = "lad^";
 
 bot.on('ready', () => {
     console.log("On.")
-    bot.user.setStatus("dnd")
+    bot.user.setGame('with your soul');
+    bot.user.setStatus("online")
     console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
-    bot.user.setGame(`on ${bot.guilds.size} servers`);
 });
 
 bot.on('message', message => {
@@ -91,6 +91,8 @@ bot.on('message', message => {
             console.error(e)
         })
     }
+
+    if
 });
 
 function clean(text) {
