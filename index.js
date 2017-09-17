@@ -13,13 +13,14 @@ const prefix = "^";
 bot.on('ready', () => {
     console.log("On.")
     bot.user.setStatus("dnd")
-    bot.user.setGame("^help")
+    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
+    bot.user.setGame(`on ${bot.guilds.size} servers`);
 });
 
 bot.on('message', message => {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
-    
+
     if (message.content.startsWith(prefix + "help")) {
         message.member.send("helpo here\n`^kick`")
     }
@@ -44,8 +45,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(prefix + 'ban')) {
-        let modRole = message.guild.roles.find("name", "ANIMU!");
-        if (!message.member.roles.has(modRole.id)) {
+        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh"].includes(r.name))) {
             return message.reply("You can't ban.")
         }
         if (message.mentions.users.size === 0) {
@@ -59,7 +59,7 @@ bot.on('message', message => {
             return message.reply("I can't ban this user.")
         }
         banMember.ban().then(member => {
-            message.reply(`$(member.user.username) was banned`)
+            message.channel.send(`${member.user.username} was banned`)
         }).catch(e => {
             console.error(e)
         })
