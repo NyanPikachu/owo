@@ -6,7 +6,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client
 const config = require('./config.json')
-const prefix = "^";
+const prefix = "lad^";
 
 // worst thing is, i'm storing all the commands here
 
@@ -22,7 +22,8 @@ bot.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
 
     if (message.content.startsWith(prefix + "help")) {
-        message.member.send("helpo here\n`^kick`")
+        message.reply(`Sent help.`)
+        message.member.send("helpo here\n`^kick` Kicks a user.\n`^ban` Bans a user.\n`^eval` Can eval JS code. Only used by owner of bot and NOT by anyone else.\n`^contact` DMs contact info to you about the owner(s) of the bot.\n")
     }
 
     const args = message.content.split(" ").slice(1);
@@ -60,6 +61,32 @@ bot.on('message', message => {
         }
         banMember.ban().then(member => {
             message.channel.send(`${member.user.username} was banned`)
+        }).catch(e => {
+            console.error(e)
+        })
+    }
+
+    if (message.content.startsWith(prefix + 'contact')) {
+        message.reply("sent contact info.")
+        message.member.send("Email: apap04@otakoapp.com\nDiscord: apap04#7823\nIf you have any concerns about anything, feel free to message me. It would be also be appreciated if you report any leaks too. :)")
+    }
+
+    if (message.content.startsWith(prefix + 'kick')) {
+        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh"].includes(r.name))) {
+            return message.reply("You can't kick.")
+        }
+        if (message.mentions.users.size === 0) {
+            return message.reply("I need a mention to kick.");
+        }
+        let kickMember = message.guild.member(message.mentions.users.first());
+        if (!kickMember) {
+            return ("That user does not seem to exist.");
+        }
+        if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) {
+            return message.reply("I can't kick this user.")
+        }
+        kickMember.kick().then(member => {
+            message.channel.send(`${member.user.username} was kicked.`)
         }).catch(e => {
             console.error(e)
         })
