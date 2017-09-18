@@ -6,13 +6,13 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client
 const config = require('./config.json')
-const prefix = "lad^";
+const prefix = "owo^";
 
 // worst thing is, i'm storing all the commands here
 
 bot.on('ready', () => {
     console.log("On.")
-    bot.user.setGame('with your soul');
+    bot.user.setGame('owo^help');
     bot.user.setStatus("online")
     console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
 });
@@ -23,7 +23,7 @@ bot.on('message', message => {
 
     if (message.content.startsWith(prefix + "help")) {
         message.reply(`sent help.`)
-        message.member.send("helpo here\n`^kick` Kicks a user.\n`^ban` Bans a user.\n`^eval` Can eval JS code. Only used by owner of bot and NOT by anyone else.\n`^contact` DMs contact info to you about the owner(s) of the bot.\n`^status` Shows status of bot.")
+        message.member.send("helpo here\n`owo^kick` Kicks a user.\n`^ban` Bans a user.\n`^eval` Can eval JS code. Only used by owner of bot and NOT by anyone else.\n`^contact` DMs contact info to you about the owner(s) of the bot.\n`^status` Shows status of bot.")
     }
 
     const args = message.content.split(" ").slice(1);
@@ -82,7 +82,7 @@ bot.on('message', message => {
         if (!kickMember) {
             return ("That user does not seem to exist.");
         }
-        if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) {
+        if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
             return message.reply("I can't kick this user.")
         }
         kickMember.kick().then(member => {
@@ -102,6 +102,28 @@ bot.on('message', message => {
                 value: "Offline"
             }]
         }});
+    }
+
+    if (message.content.startsWith(prefix + 'mute')) {
+        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh"].includes(r.name))) {
+            return message.reply("You can't mute.")
+        }
+        if (message.mentions.users.size === 0) {
+          return message.reply("I need a mention to mute.");
+        }
+        let muteMember = message.guild.member(message.mentions.users.first());
+        if (!muteMember) {
+            return ("That user does not seem to exist.");
+        }
+        if (!message.guild.member(bot.user).hasPermission("MANAGE_MEMBERS", "MANAGE_ROLES")) {
+            return message.reply("I can't mute this user.")
+        }
+        muteMember.mute().then(member => {
+            message.guild.createRole("Muted")
+            message.channel.send(`${member.user.username} was muted.`)
+        }).catch(e => {
+            console.error(e)
+        })
     }
 });
 
