@@ -46,7 +46,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(prefix + 'ban')) {
-        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh"].includes(r.name))) {
+        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh", "my love"].includes(r.name))) {
             return message.reply("You can't ban.")
         }
         if (message.mentions.users.size === 0) {
@@ -72,7 +72,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(prefix + 'kick')) {
-        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh"].includes(r.name))) {
+        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh", "my love"].includes(r.name))) {
             return message.reply("You can't kick.")
         }
         if (message.mentions.users.size === 0) {
