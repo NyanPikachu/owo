@@ -22,8 +22,8 @@ bot.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
 
     if (message.content.startsWith(prefix + "help")) {
-        message.reply(`Sent help.`)
-        message.member.send("helpo here\n`^kick` Kicks a user.\n`^ban` Bans a user.\n`^eval` Can eval JS code. Only used by owner of bot and NOT by anyone else.\n`^contact` DMs contact info to you about the owner(s) of the bot.\n")
+        message.reply(`sent help.`)
+        message.member.send("helpo here\n`^kick` Kicks a user.\n`^ban` Bans a user.\n`^eval` Can eval JS code. Only used by owner of bot and NOT by anyone else.\n`^contact` DMs contact info to you about the owner(s) of the bot.\n`^status` Shows status of bot.")
     }
 
     const args = message.content.split(" ").slice(1);
@@ -92,7 +92,17 @@ bot.on('message', message => {
         })
     }
 
-    if
+    if (message.content.startsWith(prefix + 'status')) {
+        message.channel.send({embed: {
+            title: "Bot status",
+            description: "The bot's functionality status.",
+            fields: [{
+                color: 3447003,
+                name: "Music",
+                value: "Offline"
+            }]
+        }});
+    }
 });
 
 function clean(text) {
