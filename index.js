@@ -103,28 +103,6 @@ bot.on('message', message => {
             }]
         }});
     }
-
-    if (message.content.startsWith(prefix + 'mute')) {
-        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh"].includes(r.name))) {
-            return message.reply("You can't mute.")
-        }
-        if (message.mentions.users.size === 0) {
-          return message.reply("I need a mention to mute.");
-        }
-        let muteMember = message.guild.member(message.mentions.users.first());
-        if (!muteMember) {
-            return ("That user does not seem to exist.");
-        }
-        if (!message.guild.member(bot.user).hasPermission("MANAGE_MEMBERS", "MANAGE_ROLES")) {
-            return message.reply("I can't mute this user.")
-        }
-        muteMember.mute().then(member => {
-            message.guild.createRole("Muted")
-            message.channel.send(`${member.user.username} was muted.`)
-        }).catch(e => {
-            console.error(e)
-        })
-    }
 });
 
 function clean(text) {
