@@ -7,3 +7,4 @@ config/example_permissions - Copy.ini
 config/options.ini
 config/permissions.ini
 config/whitelist.txt
+node_modules
