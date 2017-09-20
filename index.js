@@ -83,7 +83,7 @@ bot.on('message', message => {
             return ("That user does not seem to exist.");
         }
         if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
-            return message.reply("I can't kick this user.")
+            return message.reply("I can't kick this user. I don't have permission.")
         }
         kickMember.kick().then(member => {
             message.channel.send(`${member.user.username} was kicked.`)
