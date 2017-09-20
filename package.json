@@ -13,6 +13,11 @@
   "author": "Andreas P.",
   "license": "MIT",
   "devDependencies": {
-    "discord.js": "^11.2.1"
+    "discord.js": "^11.2.1",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "patron.js": "^2.2.8",
+    "registry": "^0.3.0"
   }
 }
