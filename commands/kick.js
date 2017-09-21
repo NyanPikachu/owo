@@ -1,6 +1,6 @@
 const prefix = "owo^"
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, [mention, ...reason]) => {
     if (message.content.startsWith(prefix + 'kick')) {
         if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh", "my love"].includes(r.name))) {
             return message.reply("You can't kick.")
@@ -12,10 +12,10 @@ exports.run = (client, message, args) => {
         if (!kickMember) {
             return ("That user does not seem to exist.");
         }
-        if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
+        if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
             return message.reply("I can't kick this user. I don't have permission!")
         }
-        kickMember.kick().then(member => {
+        kickMember.kick(reason.join(" ")).then(member => {
             message.channel.send(`${member.user.username} was kicked.`)
         }).catch(e => {
             console.error(e)

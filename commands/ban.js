@@ -1,6 +1,6 @@
 const prefix = "owo^"
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, [mention, ...reason]) => {
     if (message.content.startsWith(prefix + 'ban')) {
         if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh", "my love"].includes(r.name))) {
             return message.reply("You can't ban.")
@@ -12,10 +12,10 @@ exports.run = (client, message, args) => {
         if (!banMember) {
             return ("That user does not seem to exist.");
         }
-        if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) {
+        if (!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
             return message.reply("I can't ban this user.")
         }
-        banMember.ban().then(member => {
+        banMember.ban(reason.join(" ")).then(member => {
             message.channel.send(`${member.user.username} was banned`)
         }).catch(e => {
             console.error(e)

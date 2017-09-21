@@ -1,8 +1,9 @@
+const ownerID = "138056116880932864"
 const prefix = "owo^"
 
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + "eval")) {
-        if (message.author.id !== config.ownerID) {
+        if (message.author.id !== ownerID) {
             return message.channel.send("nope");
         }
         try {
