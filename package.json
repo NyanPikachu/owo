@@ -17,6 +17,8 @@
     "path": "^0.12.7"
   },
   "dependencies": {
+    "enmap": "^0.3.2",
+    "fs": "0.0.1-security",
     "patron.js": "^2.2.8",
     "registry": "^0.3.0"
   }
