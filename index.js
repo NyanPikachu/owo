@@ -6,7 +6,7 @@ const config = require('./config.json')
 const prefix = "owo^"
 
 client.on('ready', () => {
-  client.user.setGame("owo^")
+  client.user.setGame("owo^help")
   console.log(`Currently operating on ${client.channels.size} total channels with ${client.guilds.size} servers, and a total of ${client.users.size} users`)
 })
 
