@@ -4,6 +4,7 @@ const fs = require("fs");
 
 const config = require('./config.json')
 const prefix = "owo^"
+const prefix2 = "owo "
 
 client.on('ready', () => {
   client.user.setGame("owo^help")
