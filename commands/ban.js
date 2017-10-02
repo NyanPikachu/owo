@@ -16,7 +16,7 @@ exports.run = (client, message, [mention, ...reason]) => {
             return message.reply("I can't ban this user.")
         }
         banMember.ban(reason.join(" ")).then(member => {
-            message.channel.send(`${member.user.username} was banned for ${reason}`)
+            message.channel.send(`${member.user.username} was banned for ${reason}.`)
         }).catch(e => {
             console.error(e)
         })
