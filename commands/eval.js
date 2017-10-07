@@ -1,6 +1,6 @@
 const ownerID = "138056116880932864"
 const prefix = "owo^"
-const prefix2 = "owo "
+const prefix2 = "owo"
 
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix2 + "eval")) {
