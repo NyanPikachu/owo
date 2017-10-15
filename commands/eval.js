@@ -3,7 +3,7 @@ const prefix = "owo^"
 const prefix2 = "owo"
 
 exports.run = (client, message, args) => {
-    if (message.content.startsWith(prefix2 + "eval")) {
+    if (message.content.startsWith(prefix + "eval")) {
         if (message.author.id !== ownerID) {
             return message.channel.send("nope");
         }
