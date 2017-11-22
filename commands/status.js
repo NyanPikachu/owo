@@ -1,4 +1,4 @@
-const prefix = "owo^"
+//const prefix = "owo^"
 
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + 'status')) {
