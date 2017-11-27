@@ -2,12 +2,11 @@ const ownerID = "138056116880932864"
 const prefix = "owo^"
 
 exports.run = (client, message, args) => {
-    if (message.content.startsWith(prefix + "crash")) {
+    if (message.content.startsWith(prefix + "restart")) {
         if (message.author.id !== ownerID) {
-            return message.channel.send("no pls dont");
+            return message.channel.send("no pls dont")
         }
         try {
-            message.channel.send("Quitting..")
             message.client.destroy()
             process.exit()
             return 1

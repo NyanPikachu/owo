@@ -3,6 +3,6 @@ const prefix = "owo^"
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + "help")) {
         message.reply(`sent help.`)
-        message.member.send("helpo here\n`owo^kick` Kicks a user.\n`owo^ban` Bans a user.\n`owo^contact` DMs contact info to you about the owner(s) of the bot.\n`owo^status` Shows status of bot.\n`owo^purge` Purges specific amount of messages. 100 message limit.\n`owo^github` Source code link.\n`owo^ping` Gets ping.")
+        message.member.send("helpo here\n```Moderation Commands\n==========================\nowo^kick Kicks a user.\nowo^ban Bans a user.\nowo^purge Purges specific amount of messages. 100 message limit.\n\nMisc Commands\n==========================\nowo^contact DMs contact info to you about the owner(s) of the bot.\nowo^status Shows status of bot.\nowo^github Source code link.\nowo^ping Gets ping.```")
     }
 }
