@@ -8,3 +8,5 @@ config/options.ini
 config/permissions.ini
 config/whitelist.txt
 node_modules
+pm2-script.bat
+pm2-stop.bat
