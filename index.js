@@ -5,6 +5,7 @@
  */
 
 const Discord = require('discord.js')
+const DiscordRPC = require("discord-rpc");
 const client = new Discord.Client()
 const fs = require('fs')
 const chalk = require('chalk')
@@ -34,4 +35,23 @@ client.on("message", message => {
   }
 });
 
-client.login(config.token)
+/* DiscordRPC.register(config.ClientId);
+
+const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+
+rpc.on('ready', () => {
+  console.log(`RPC ready.`);
+  rpc.setActivity({
+    details: `owo`,
+    state: 'its rpc',
+    largeImageKey: 'owo',
+    largeImageText: 'owo',
+    smallImageKey: 'owo2',
+    smallImageText: 'whats this?',
+    instance: false,
+  });
+});
+
+rpc.login(config.ClientId).catch(console.error);
+
+client.login(config.token) */

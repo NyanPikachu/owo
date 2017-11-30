@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "chalk": "^2.3.0",
+    "discord-rpc": "^3.0.0-beta.4",
     "enmap": "^0.3.2",
     "fs": "0.0.1-security",
     "patron.js": "^2.2.8",
