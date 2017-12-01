@@ -52,6 +52,6 @@ rpc.on('ready', () => {
   });
 });
 
-rpc.login(config.ClientId).catch(console.error);
+rpc.login(config.ClientId).catch(console.error); */
 
-client.login(config.token) */
+client.login(config.token)
