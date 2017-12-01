@@ -2,7 +2,7 @@ const prefix = "owo^"
 
 exports.run = (client, message, [mention, ...reason]) => {
     if (message.content.startsWith(prefix + 'ban')) {
-        if (!message.member.roles.some(r => ["Administrator", "Admin", "Owner", "Co-Owner", "my love"].includes(r.name))) {
+        if (!message.member.hasPermission(4)) {
             return message.reply("You can't ban.")
         }
         if (message.mentions.users.size === 0) {

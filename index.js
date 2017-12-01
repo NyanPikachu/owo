@@ -54,4 +54,4 @@ rpc.on('ready', () => {
 
 rpc.login(config.ClientId).catch(console.error); */
 
-client.login(config.token)
+client.login(config.token).catch(console.error)

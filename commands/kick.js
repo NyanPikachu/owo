@@ -2,7 +2,7 @@ const prefix = "owo^"
 
 exports.run = (client, message, [mention, ...reason]) => {
     if (message.content.startsWith(prefix + 'kick')) {
-        if (!message.member.roles.some(r => ["Administrator", "Moderator", "Mod", "Admin", "Owner", "Co-Owner", "Modeh", "my love"].includes(r.name))) {
+        if (!message.member.hasPermission(2)) {
             return message.reply("You can't kick.")
         }
         if (message.mentions.users.size === 0) {

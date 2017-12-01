@@ -1,6 +1,9 @@
 const prefix = "owo^"
 
 exports.run = (client, message, args) => {
+    if (!message.member.hasPermission(8192)) {
+        return message.reply("You can't purge.")
+    }
     const user = message.mentions.users.first();
     const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
     if (!amount) return message.reply('Must specify an amount to delete!');
