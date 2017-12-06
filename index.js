@@ -5,14 +5,11 @@
  */
 
 const Discord = require('discord.js')
-const DiscordRPC = require("discord-rpc");
 const client = new Discord.Client()
-const fs = require('fs')
 const chalk = require('chalk')
 
 const config = require('./config.json')
 const prefix = "owo^"
-const prefix2 = "owo"
 
 client.on('ready', () => {
   client.user.setGame(`owo^help | Guilds: ${client.guilds.size} | Users: ${client.users.size}`)
@@ -34,24 +31,5 @@ client.on("message", message => {
     console.error(chalk.red(err + ". Simply, this module doesn't exist or is a bug."))
   }
 });
-
-/* DiscordRPC.register(config.ClientId);
-
-const rpc = new DiscordRPC.Client({ transport: 'ipc' });
-
-rpc.on('ready', () => {
-  console.log(`RPC ready.`);
-  rpc.setActivity({
-    details: `owo`,
-    state: 'its rpc',
-    largeImageKey: 'owo',
-    largeImageText: 'owo',
-    smallImageKey: 'owo2',
-    smallImageText: 'whats this?',
-    instance: false,
-  });
-});
-
-rpc.login(config.ClientId).catch(console.error); */
 
 client.login(config.token).catch(console.error)

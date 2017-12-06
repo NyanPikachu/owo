@@ -1,7 +1,5 @@
 const ownerID = "138056116880932864" // Use your own ID.
 const prefix = "owo^"
-const prefix2 = "owo"
-const m = "message"
 
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + "eval")) {
