@@ -16,8 +16,7 @@ exports.run = (client, message, [mention, ...reason]) => {
             return message.reply("I can't kick this user. I don't have permission!")
         }
         kickMember.kick(reason.join(" ")).then(member => {
-            message.channel.send(`${member.user.username} was kicked for ${reason}.`)
-            message.guild.member.send(`You were kicked for ${reason}.`)
+            message.channel.send(`${member.user.username} was kicked.`)
         }).catch(e => {
             console.error(e)
         })
