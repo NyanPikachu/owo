@@ -1,4 +1,4 @@
-const prefix = "owo^"
+//const prefix = "owo^"
 
 exports.run = (client, message, [mention]) => {
     if (message.content.startsWith(prefix + 'kiss')) {
