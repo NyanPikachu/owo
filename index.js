@@ -1,7 +1,8 @@
 /**
- * @author Andreas P. <apap04@otakoapp.com>
- * @description Main file for bot operation.
- * @name index.js
+ * File name: index.js
+ * Description: Main file for running bot
+ * Authors: Andreas P. <apap04@otakoapp.com>
+ * Licensed under Apache 2.0.
  */
 
 const Discord = require('discord.js')
