@@ -1,3 +1,10 @@
+/**
+ * File name: restart.js
+ * Description: restart bot file.
+ * Authors: Andreas P. <apap04@otakoapp.com>
+ * Licensed under Apache 2.0.
+ */
+
 const ownerID = "138056116880932864"
 const prefix = "owo^"
 

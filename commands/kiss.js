@@ -1,6 +1,6 @@
 /**
- * File name: index.js
- * Description: Main file for running bot
+ * File name: kiss.js
+ * Description: Kissing people ;)
  * Authors: Andreas P. <apap04@otakoapp.com>
  * Licensed under Apache 2.0.
  */

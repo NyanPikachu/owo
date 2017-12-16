@@ -1,6 +1,6 @@
 /**
- * File name: index.js
- * Description: Main file for running bot
+ * File name: ban.js
+ * Description: ban others
  * Authors: Andreas P. <apap04@otakoapp.com>
  * Licensed under Apache 2.0.
  */
