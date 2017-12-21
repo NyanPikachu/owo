@@ -1,0 +1,7 @@
+newIssueWelcomeComment: > 
+  T-thanks for creating the issue.. W-w-we'll be looking over it.. 
+
+newPRWelcomeComment: >
+  T-thanks for contributing. W-we'll check over the code soon.. B-be sure to sign the CLA! I-I don't trust you with my bot code..
+
+
