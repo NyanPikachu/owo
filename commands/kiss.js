@@ -5,14 +5,13 @@
  * Licensed under Apache 2.0.
  */
 
-//const prefix = "owo^"
-// help pls
+const prefix = "owo^"
 
 exports.run = (client, message, [mention]) => {
     if (message.content.startsWith(prefix + 'kiss')) {
         if (message.mentions.users.size === 0) {
             return message.channel.send("kiss who :>");
         }
-        message.reply(`kissed .`)
+        message.reply(`kissed ${mention}.`)
     }
 }
