@@ -12,6 +12,6 @@ exports.run = (client, message, [mention]) => {
         if (message.mentions.users.size === 0) {
             return message.channel.send("kiss who :>");
         }
-        message.reply(`kissed ${mention}.`)
+        message.channel.send(`${message.author} kissed ${mention}.`)
     }
 }
