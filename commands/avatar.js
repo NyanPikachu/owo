@@ -5,7 +5,7 @@
  * Licensed under Apache 2.0.
  */
 
-const prefix = "e!"
+const prefix = "owo^"
 
 exports.run = (client, message, [mention]) => {
     if (message.content.startsWith(prefix + 'avatar')) {
