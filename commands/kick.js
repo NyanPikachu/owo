@@ -19,7 +19,7 @@ exports.run = (client, message, [mention, ...reason]) => {
         if (!kickMember) {
             return ("That user does not seem to exist.");
         }
-        if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
+        if (!message.guild.member(client.user).hasPermission(2)) {
             return message.reply("I can't kick this user. I don't have permission!")
         }
         kickMember.kick(reason.join(" ")).then(member => {

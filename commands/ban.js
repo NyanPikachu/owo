@@ -19,8 +19,8 @@ exports.run = (client, message, [mention, ...reason]) => {
         if (!banMember) {
             return ("That user does not seem to exist.");
         }
-        if (!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
-            return message.reply("I can't ban this user.")
+        if (!message.guild.member(client.user).hasPermission(4)) {
+            return message.reply("I can't ban this user. I don't have permission!")
         }
         banMember.ban(reason.join(" ")).then(member => {
             message.channel.send(`${member.user.username} was banned`)

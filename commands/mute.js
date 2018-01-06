@@ -8,10 +8,10 @@
 const ownerID = "138056116880932864"
 const prefix = "owo^"
 
-exports.run = (client, message, args, [mention]) => {
+exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + "mute")) {
-        if (message.author.id !== ownerID) {
-            return message.reply("This command is in development.")
+        if (message.member.id !== ownerID) {
+            return message.reply("This command cannot be used yet.")
         }
         if (!message.member.hasPermission(268435456)) {
             return message.reply("You can't mute.")
@@ -19,9 +19,17 @@ exports.run = (client, message, args, [mention]) => {
         if (message.mentions.users.size === 0) {
             return message.reply("I need a mention to mute.");
         }
-        let kickMember = message.guild.member(message.mentions.users.first());
-        if (!kickMember) {
+        let muteMember = message.guild.member(message.mentions.users.first());
+        if (!muteMember) {
             return ("That user does not seem to exist.");
         }
+        if (!message.guild.member(client.user).hasPermission(268435456)) {
+            return message.reply("I can't mute this user. I don't have permission!")
+        }
+        muteMember.mute(reason.join(" ")).then(member => {
+            message.channel.send(`${member.user.username} was muted.`)
+        }).catch(e => {
+            console.error(e)
+        })
     }
 }

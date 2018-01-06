@@ -7,7 +7,6 @@
 
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const chalk = require('chalk')
 
 const config = require('./config.json')
 const prefix = "owo^"
