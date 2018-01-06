@@ -8,10 +8,10 @@
 const prefix = "e!"
 
 exports.run = (client, message, [mention]) => {
-    if (message.content.startsWith(prefix + 'kiss')) {
+    if (message.content.startsWith(prefix + 'snuggle')) {
         if (message.mentions.users.size === 0) {
-            return message.channel.send("kiss who :>");
+            return message.channel.send("snuggle who :>");
         }
-        message.channel.send(`${message.author} kissed ${mention}. https://media1.tenor.com/images/f5167c56b1cca2814f9eca99c4f4fab8/tenor.gif`)
+        message.channel.send(`${message.author} snuggled ${mention}. http://i0.kym-cdn.com/photos/images/newsfeed/000/987/510/f81.gif`)
     }
 }

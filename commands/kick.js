@@ -1,3 +1,5 @@
+
+
 /**
  * File name: kick.js
  * Description: kick users
@@ -5,7 +7,7 @@
  * Licensed under Apache 2.0.
  */
 
-const prefix = "owo^"
+const prefix = "e!"
 
 exports.run = (client, message, [mention, ...reason]) => {
     if (message.content.startsWith(prefix + 'kick')) {

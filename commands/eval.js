@@ -1,12 +1,55 @@
 /**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  * File name: eval.js
  * Description: for evaling js code
  * Authors: Andreas P. <apap04@otakoapp.com>
  * Licensed under Apache 2.0.
  */
 
-const ownerID = "138056116880932864"
-const prefix = "owo^"
+const ownerID = "269238662741360640"
+const prefix = "e!"
 
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + "eval")) {
