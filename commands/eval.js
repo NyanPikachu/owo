@@ -1,4 +1,4 @@
-/**
+/*
  * File name: eval.js
  * Description: for evaling js code
  * Authors: Andreas P. <apap04@otakoapp.com>
