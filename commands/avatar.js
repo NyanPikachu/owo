@@ -7,7 +7,7 @@
 
 const prefix = "owo^"
 
-exports.run = (client, message, [mention]) => {
+exports.run = (client, message) => {
     if (message.content.startsWith(prefix + 'avatar')) {
         message.reply(message.author.avatarURL);
     }
