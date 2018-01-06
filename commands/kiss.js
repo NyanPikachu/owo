@@ -12,6 +12,6 @@ exports.run = (client, message, [mention]) => {
         if (message.mentions.users.size === 0) {
             return message.channel.send("kiss who :>");
         }
-        message.channel.send(`${message.author} kissed ${mention}.`)
+        message.channel.send(`${message.author} kissed ${mention}.\nhttps://media1.tenor.com/images/f5167c56b1cca2814f9eca99c4f4fab8/tenor.gif`)
     }
 }
