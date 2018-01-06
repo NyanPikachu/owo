@@ -12,6 +12,6 @@ exports.run = (client, message, [mention]) => {
         if (message.mentions.users.size === 0) {
             return message.channel.send("pat who? :V");
         }
-        message.channel.send(`${message.author} gave a pat to ${mention}.\nhttps://media1.tenor.com/images/bf646b7164b76efe82502993ee530c78/tenor.gif`)
+        message.channel.send(`${message.author} patted ${mention}.\nhttps://media1.tenor.com/images/bf646b7164b76efe82502993ee530c78/tenor.gif`)
     }
 }

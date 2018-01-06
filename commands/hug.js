@@ -1,6 +1,6 @@
 /**
- * File name: kiss.js
- * Description: Kissing people ;)
+ * File name: hug.js
+ * Description: 
  * Authors: Andreas P. <apap04@otakoapp.com>
  * Licensed under Apache 2.0.
  */
@@ -12,6 +12,6 @@ exports.run = (client, message, [mention]) => {
         if (message.mentions.users.size === 0) {
             return message.channel.send("hug who :>");
         }
-        message.channel.send(`${message.author} hug ${mention}. https://media1.tenor.com/images/49a21e182fcdfb3e96cc9d9421f8ee3f/tenor.gif`)
+        message.channel.send(`${message.author} hug ${mention}.\nhttps://media1.tenor.com/images/49a21e182fcdfb3e96cc9d9421f8ee3f/tenor.gif`)
     }
 }

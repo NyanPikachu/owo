@@ -1,6 +1,6 @@
 /**
- * File name: kiss.js
- * Description: Kissing people ;)
+ * File name: avatar.js
+ * Description: 
  * Authors: Andreas P. <apap04@otakoapp.com>
  * Licensed under Apache 2.0.
  */

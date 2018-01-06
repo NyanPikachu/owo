@@ -1,5 +1,3 @@
-
-
 /**
  * File name: kick.js
  * Description: kick users
