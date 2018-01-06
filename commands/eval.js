@@ -5,7 +5,7 @@
  * Licensed under Apache 2.0.
  */
 
-const ownerID = "269238662741360640"
+const ownerID = "138056116880932864"
 const prefix = "owo^"
 
 exports.run = (client, message, args) => {
