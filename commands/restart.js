@@ -6,7 +6,7 @@
  */
 
 const ownerID = "138056116880932864"
-const prefix = "e!"
+const prefix = "owo^"
 
 exports.run = (client, message, args) => {
     if (message.content.startsWith(prefix + "restart")) {
