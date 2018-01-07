@@ -1,7 +1,7 @@
 /**
  * File name: avatar.js
  * Description: 
- * Authors: Andreas P. <apap04@otakoapp.com>
+ * Authors: Andreas P. <apap04@otakoapp.com>, YazawaNic0 (https://github.com/YazawaNic0)
  * Licensed under Apache 2.0.
  */
 
