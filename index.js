@@ -28,7 +28,7 @@ client.on("message", message => {
     let commandFile = require(`./commands/${command}.js`)
     commandFile.run(client, message, args);
   } catch (err) {
-    console.error(chalk.red(err + ". Simply, this module doesn't exist or is a bug."))
+    console.error(err + ". Simply, this module doesn't exist or is a bug.")
   }
 });
 
