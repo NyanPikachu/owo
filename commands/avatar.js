@@ -6,9 +6,13 @@
  */
 
 const prefix = "owo^"
+const ownerID = "138056116880932864"
 
 exports.run = (client, message) => {
     if (message.content.startsWith(prefix + 'avatar')) {
+        if (message.member.id !== ownerID) {
+            return message.reply("This command cannot be used yet.")
+        }
         message.reply(message.author.avatarURL);
     }
 }
