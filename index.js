@@ -32,4 +32,4 @@ client.on("message", message => {
   }
 });
 
-client.login(config.token).catch(console.error)
+client.login(process.env.BOT_TOKEN).catch(console.error)
