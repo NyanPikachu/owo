@@ -8,7 +8,8 @@
 const prefix = "owo^"
 
 exports.run = (client, message) => {
-    if (message.content.startsWith(prefix + 'avatar')) {
-        message.reply("cara uwu");
+    if (message.content.startsWith(prefix + 'cara')) {
+        message.channel.send("cara uwu");
+        console.log("cara isnt thot!!!")
     }
 }

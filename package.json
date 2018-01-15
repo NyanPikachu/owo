@@ -21,7 +21,9 @@
   "dependencies": {
     "discord-rpc": "^3.0.0-beta.4",
     "enmap": "^0.3.2",
+    "express": "^4.16.2",
     "fs": "0.0.1-security",
+    "http": "0.0.0",
     "patron.js": "^2.2.8",
     "registry": "^0.3.0"
   }
